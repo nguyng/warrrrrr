@@ -1,0 +1,85 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #0d1b2a, #1b263b);
+    color: white; 
+    margin: 0;
+    padding: 0;
+}
+.header-spacer {
+  height: 120px; /* chiều cao header */
+}
+    
+.user-container {
+   
+    max-width: 450px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.user-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #ff6b35;
+    object-fit: cover;
+}
+
+h2 {
+    margin-top: 15px;
+    color: #fffcf2;
+}
+
+p {
+    margin: 5px 0;
+    color: #ccc;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.stat span {
+    display: block;
+    font-size: 18px;
+    color: #ff6b35;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    margin: 8px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    background: #ff6b35;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #ff833a;
+}
+
+.btn.logout {
+    background: #d62828;
+}
+
+.btn.logout:hover {
+    background: #e63946;
+}

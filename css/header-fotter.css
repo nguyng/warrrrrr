@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+.header-spacer {
+  height: 120px; /* chiều cao header */
+}
 .main-menu {
   background-color: #004080;
   color: white;
@@ -78,7 +81,7 @@
     border: none;
     background: transparent;
     padding: 8px 10px;
-    color: rgb(243, 28, 28);
+    color: white;
     outline: none;
 }
 
@@ -101,16 +104,13 @@
 }
 
 /* Badge số lượng giỏ hàng */
-.cart-bag {
-   position: relative; 
-   display: inline-block; 
-  }
+.cart-bag { position: relative; display: inline-block; }
 .cart-count {
   position: absolute;
   top: -6px;
   right: -8px;
   background: #ff4d4f;
-  color: #f51010;
+  color: #fff;
   border-radius: 999px;
   font-size: 11px;
   line-height: 1;
