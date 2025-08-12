@@ -1,0 +1,465 @@
+/* Reset và Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.4;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Main Content */
+.main-content {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  margin-bottom: 30px;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #ff6b35;
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.cta-button:hover {
+  background: #e55a2b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+/* Brand Navigation */
+.brand-nav {
+  background: #f8f9fa;
+  padding: 25px 0;
+  margin-bottom: 30px;
+}
+
+.brand-nav h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.brand-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.brand-tab {
+  background: white;
+  border: 2px solid #e9ecef;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.brand-tab:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.brand-tab.active {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}
+
+/* Products Section */
+.products-section {
+  padding: 30px 0;
+}
+
+.brand-products {
+  margin-bottom: 50px;
+}
+
+.brand-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  position: relative;
+}
+
+.brand-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.category-section {
+  margin-bottom: 30px;
+}
+
+.category-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #555;
+  padding-left: 15px;
+  border-left: 3px solid #667eea;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Product Cards */
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.product-image {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-overlay {
+  opacity: 1;
+}
+
+.quick-view {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.quick-view:hover {
+  background: #e55a2b;
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #333;
+  font-weight: 600;
+}
+
+.product-category {
+  color: #666;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ff6b35;
+  margin-bottom: 12px;
+}
+
+.add-to-cart {
+  width: 100%;
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.add-to-cart:hover {
+  background: #5a6fd8;
+  transform: translateY(-2px);
+}
+
+/* Accessories Section */
+.accessories-section {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 2px solid #e9ecef;
+}
+
+.accessories-section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .brand-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .brand-tab {
+    width: 180px;
+    text-align: center;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  .hero-section {
+    padding: 40px 15px;
+  }
+  
+  .brand-nav {
+    padding: 20px 0;
+  }
+  
+  .brand-nav h2 {
+    font-size: 1.8rem;
+  }
+  
+  .brand-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 35px 10px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .cta-button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .brand-nav {
+    padding: 20px 0;
+  }
+  
+  .brand-nav h2 {
+    font-size: 1.6rem;
+  }
+  
+  .brand-title {
+    font-size: 1.6rem;
+  }
+  
+  .product-image {
+    height: 200px;
+  }
+  
+  .product-info {
+    padding: 12px;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Brand-specific colors */
+.brand-products[data-brand="adidas"] .brand-title::after {
+  background: linear-gradient(90deg, #0066CC, #0066CC);
+}
+
+.brand-products[data-brand="nike"] .brand-title::after {
+  background: linear-gradient(90deg, #000000, #000000);
+}
+
+.brand-products[data-brand="skechers"] .brand-title::after {
+  background: linear-gradient(90deg, #FF6B35, #FF6B35);
+}
+
+.brand-products[data-brand="speedo"] .brand-title::after {
+  background: linear-gradient(90deg, #00BFFF, #00BFFF);
+}
+
+/* Category-specific colors for Hang-Nam page */
+.brand-products[data-category="ao"] .brand-title::after {
+  background: linear-gradient(90deg, #FF6B35, #FF6B35);
+}
+
+.brand-products[data-category="quan"] .brand-title::after {
+  background: linear-gradient(90deg, #667eea, #667eea);
+}
+
+.brand-products[data-category="giay"] .brand-title::after {
+  background: linear-gradient(90deg, #32CD32, #32CD32);
+}
+
+.brand-products[data-category="phukien"] .brand-title::after {
+  background: linear-gradient(90deg, #8B4513, #8B4513);
+}
+
+/* Active navigation link styling */
+.main-menu .has-submenu a[href*="Hang-Nam"] {
+  color: #667eea !important;
+  font-weight: bold;
+}
+
+.main-menu .has-submenu a[href*="Hang-Nu"] {
+  color: #e91e63 !important;
+  font-weight: bold;
+}
+
+.main-menu .has-submenu a[href*="Phu-Kien"] {
+  color: #ff9800 !important;
+  font-weight: bold;
+}
+
+.main-menu .has-submenu a[href*="Thuong-Hieu"] {
+  color: #4caf50 !important;
+  font-weight: bold;
+}
+
+/* Product card hover effects for Hang-Nam */
+.brand-products[data-category] .product-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* Category section spacing */
+.brand-products[data-category] {
+  margin-bottom: 60px;
+}
+
+.brand-products[data-category] .brand-title {
+  margin-bottom: 30px;
+}
+
+/* Remove underline from all links */
+a {
+  text-decoration: none;
+}
+
+/* Remove underline from specific link types if needed */
+a:hover {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
