@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User - Sport Shop</title>
+    <title>Chi tiết đơn hàng</title>
     <link rel="stylesheet" href="../css/header-fotter.css">
-    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/order-detail.css">
 </head>
 <body>
     <div class="header">
@@ -15,7 +15,7 @@
       </div>
       <nav class="main-menu">
         <ul>
-            <h1 class="company-name"><a href="shop.html">Nguyensports</a></h1> 
+            <h1 class="company-name">Nguyensports</h1>
           <li>Hàng Mới</li>
           <li class="has-submenu">
             Nam
@@ -488,31 +488,32 @@
       </nav>
     </div>
     <div class="header-spacer"></div>
+    <div class="container">
+        <h1>📝 Chi tiết đơn hàng</h1>
+        <p><strong>Mã đơn:</strong> DH001</p>
+        <p><strong>Ngày đặt:</strong> 10/08/2025</p>
+        <p><strong>Trạng thái:</strong> <span class="status processing">Đang xử lý</span></p>
+        <p><strong>Tổng tiền:</strong> 1.000.000đ</p>
 
-    <div class="user-container">
-        <img src="https://tse4.mm.bing.net/th/id/OIP.K98dh7RMhuVfhjN7N_SVQQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Avatar" class="user-avatar">
-        <h2 id="username">Nguyễn Văn Naruto</h2>
-        <p>Email: <span id="email">nguyenvana@example.com</span></p>
-        <p>Hạng thành viên: <span id="rank">Gold</span></p>
-
-        <div class="stats">
-            <div class="stat">
-                <span id="orders">12</span>
-                Đơn hàng
-            </div>
-            <div class="stat">
-                <span id="points">350</span>
-                Điểm
+        <h2>📦 Sản phẩm</h2>
+        <div class="product">
+            <img src="https://images.pexels.com/photos/3756040/pexels-photo-3756040.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Giày chạy bộ">
+            <div>
+                <p><strong>Giày chạy bộ Nike Air</strong></p>
+                <p>Số lượng: 1</p>
+                <p>Giá: 1.000.000đ</p>
             </div>
         </div>
 
-        <a href="donhangcuauser.html" class="btn">📦 Xem đơn hàng</a>
-        <a href="giohang.html" class="btn">🛒 Giỏ hàng</a>
-        <a href="shop.html" class="">
-        <button class="btn logout" onclick="logout()">🚪 Đăng xuất</button>
-        </a>
+        <h2>📍 Địa chỉ giao hàng</h2>
+        <p>Nguyễn Văn A, 123 Đường ABC, Quận 1, TP. Hồ Chí Minh</p>
+        <p>SĐT: 0901234567</p>
+
+        <h2>🗒 Ghi chú đơn hàng</h2>
+        <p>Giao hàng trong giờ hành chính</p>
     </div>
-<div class="footer">
+   
+  <div class="footer">
       <footer>
         <div class="footer-container">
           <div class="footer-section">
@@ -561,6 +562,6 @@
         </div>
       </footer>
     </div>
-    <script src="user.js"></script>
+    <script>src = "../js/cartCount.js"</script>
 </body>
 </html>

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User - Sport Shop</title>
+    <title>Nhập địa chỉ giao hàng</title>
     <link rel="stylesheet" href="../css/header-fotter.css">
-    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/user-address.css">
 </head>
 <body>
     <div class="header">
@@ -15,8 +15,8 @@
       </div>
       <nav class="main-menu">
         <ul>
-            <h1 class="company-name"><a href="shop.html">Nguyensports</a></h1> 
-          <li>Hàng Mới</li>
+            <h1 class="company-name"><a href="shop.html">Nguyensports</a></h1>
+          <li><a href="shop.html" style="color: white; text-decoration: none;">Hàng Mới</a></li>
           <li class="has-submenu">
             Nam
             <div class="mega-menu">
@@ -458,7 +458,7 @@
   </div>
 </li>
 
-          <li class="has-submenu">Ưu Đãi
+          <li class="has-submenu"><a href="giohang.html" style="color: white; text-decoration: none;">Ưu Đãi</a>
             <div class="mega-menu">
               <div class="column">
                 <ul>
@@ -488,50 +488,48 @@
       </nav>
     </div>
     <div class="header-spacer"></div>
+    <div class="container">
+        
+        <h1>📍 Nhập địa chỉ giao hàng</h1>
+        <form action="#" method="post">
+            <label for="fullname">Họ và tên</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Nguyễn Văn A" required>
 
-    <div class="user-container">
-        <img src="https://tse4.mm.bing.net/th/id/OIP.K98dh7RMhuVfhjN7N_SVQQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Avatar" class="user-avatar">
-        <h2 id="username">Nguyễn Văn Naruto</h2>
-        <p>Email: <span id="email">nguyenvana@example.com</span></p>
-        <p>Hạng thành viên: <span id="rank">Gold</span></p>
+            <label for="phone">Số điện thoại</label>
+            <input type="tel" id="phone" name="phone" placeholder="0901234567" required>
 
-        <div class="stats">
-            <div class="stat">
-                <span id="orders">12</span>
-                Đơn hàng
-            </div>
-            <div class="stat">
-                <span id="points">350</span>
-                Điểm
-            </div>
-        </div>
+            <label for="province">Tỉnh / Thành phố</label>
+            <input type="text" id="province" name="province" placeholder="TP. Hồ Chí Minh" required>
 
-        <a href="donhangcuauser.html" class="btn">📦 Xem đơn hàng</a>
-        <a href="giohang.html" class="btn">🛒 Giỏ hàng</a>
-        <a href="shop.html" class="">
-        <button class="btn logout" onclick="logout()">🚪 Đăng xuất</button>
-        </a>
+            <label for="district">Quận / Huyện</label>
+            <input type="text" id="district" name="district" placeholder="Quận 1" required>
+
+            <label for="address">Địa chỉ cụ thể</label>
+            <textarea id="address" name="address" placeholder="Số nhà, đường, phường..." rows="3" required></textarea>
+
+            <button type="submit">Lưu địa chỉ</button>
+        </form>
     </div>
-<div class="footer">
+    <div class="footer">
       <footer>
         <div class="footer-container">
           <div class="footer-section">
             <h3>Hỗ Trợ Khách Hàng</h3>
             <ul>
-              <li><a href="#">Hướng Dẫn Mua Hàng</a></li>
+                             <li><a href="giohang.html">Hướng Dẫn Mua Hàng</a></li>
               <li><a href="#">Phương Thức Thanh Toán</a></li>
               <li><a href="#">Chính Sách Đổi Trả</a></li>
               <li><a href="#">Chính Sách Giao Hàng</a></li>
               <li><a href="#">Chính Sách Bảo Mật</a></li>
               <li><a href="#">Câu Hỏi Thường Gặp</a></li>
-              <li><a href="#">Liên Hệ</a></li>
+                             <li><a href="user-address.html">Liên Hệ</a></li>
             </ul>
           </div>
 
           <div class="footer-section">
             <h3>Về Chúng Tôi</h3>
             <ul>
-              <li><a href="#">Giới Thiệu</a></li>
+                             <li><a href="shop.html">Giới Thiệu</a></li>
               <li><a href="#">Hệ Thống Cửa Hàng</a></li>
               <li><a href="#">Tuyển Dụng</a></li>
             </ul>
@@ -561,6 +559,6 @@
         </div>
       </footer>
     </div>
-    <script src="user.js"></script>
+    <script src="../js/cartCount.js"></script>
 </body>
 </html>
