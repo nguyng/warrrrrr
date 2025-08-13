@@ -181,7 +181,7 @@
       </div>
   
       <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="user"></a>
-      <a class="cart-bag" href="giohang.html">
+      <a class="cart-bag" href="giohang.php">
         <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="bag">
         <span id="cartCount" class="cart-count">3</span>
       </a>

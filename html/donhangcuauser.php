@@ -475,12 +475,12 @@
         <button><img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="search"></button>
     </div>
 
-    <a class="profile-user" href="user.html"><img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="user"></a>
-    <a class="cart-bag" href="giohang.html">
+    <a class="profile-user" href="user.php"><img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="user"></a>
+    <a class="cart-bag" href="giohang.php">
       <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="bag">
       <span id="cartCount" class="cart-count">3</span>
     </a>
-    <a href="user-address.html"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="location"></a>
+    <a href="user-address.php"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="location"></a>
     <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="truck"></a>
 </div>
 

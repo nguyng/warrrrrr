@@ -17,9 +17,9 @@
         <nav class="main-menu">
           <ul>
               <h1 class="company-name">Nguyensports</h1>
-            <li><a href="Hang-Moi.html"  style="color: #eef0ee; font-weight: bold;">Hàng Mới</a></li>
+            <li><a href="Hang-Moi.php"  style="color: #eef0ee; font-weight: bold;">Hàng Mới</a></li>
             <li class="has-submenu">
-              <a href="Hang-Nam.html">Nam</a>
+              <a href="Hang-Nam.php">Nam</a>
               <div class="mega-menu">
                 <div class="column">
                   <h3>Giày</h3>
@@ -74,7 +74,7 @@
               </div>
             </li>
             <li class="has-submenu">
-              <a href="Hang-Nu.html">Nữ</a>
+              <a href="Hang-Nu.php">Nữ</a>
               <div class="mega-menu">
                 <div class="column">
                   <h3>Giày</h3>
@@ -118,7 +118,7 @@
             </li>
             
             <li class="has-submenu">
-              <a href="Phu-Kien.html">Phụ Kiện</a>
+              <a href="Phu-Kien.php">Phụ Kiện</a>
               <div class="mega-menu">
                 <div class="column">
                   <h3>Túi & Balo</h3>
@@ -145,7 +145,7 @@
             </li>
   
             <li class="has-submenu">
-              <a href="Thuong-Hieu.html" style="color: #4caf50; font-weight: bold;">Thương Hiệu</a>
+              <a href="Thuong-Hieu.php" style="color: #4caf50; font-weight: bold;">Thương Hiệu</a>
               <div class="mega-menu">
                 <div class="column">
                   <h3>A - z</h3>
@@ -177,7 +177,7 @@
       </div>
   
       <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="user"></a>
-      <a class="cart-bag" href="giohang.html">
+      <a class="cart-bag" href="giohang.php">
         <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="bag">
         <span id="cartCount" class="cart-count">3</span>
       </a>

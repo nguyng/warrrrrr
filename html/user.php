@@ -15,28 +15,28 @@
       </div>
       <nav class="main-menu">
         <ul>
-            <h1 class="company-name"><a href="shop.html" style="color: white; text-decoration: none;">Nguyensports</a></h1>
-          <li><a href="shop.html" style="color: white; text-decoration: none;">Hàng Mới</a></li>
-          <li><a href="Hang-Nam.html" style="color: white; text-decoration: none;">Nam</a></li>
-          <li><a href="Hang-Nu.html" style="color: white; text-decoration: none;">Nữ</a></li>
+            <h1 class="company-name"><a href="shop.php" style="color: white; text-decoration: none;">Nguyensports</a></h1>
+          <li><a href="Hang-Moi.php" style="color: white; text-decoration: none;">Hàng Mới</a></li>
+          <li><a href="Hang-Nam.php" style="color: white; text-decoration: none;">Nam</a></li>
+          <li><a href="Hang-Nu.php" style="color: white; text-decoration: none;">Nữ</a></li>
 
-          <li><a href="Phu-Kien.html" style="color: white; text-decoration: none;">Phụ Kiện</a></li>
+          <li><a href="Phu-Kien.php" style="color: white; text-decoration: none;">Phụ Kiện</a></li>
 
-          <li><a href="Thuong-Hieu.html" style="color: white; text-decoration: none;">Thương Hiệu</a></li>
+          <li><a href="Thuong-Hieu.php" style="color: white; text-decoration: none;">Thương Hiệu</a></li>
 
-          <li><a href="giohang.html" style="color: white; text-decoration: none;">Ưu Đãi</a></li>
+          <li><a href="giohang.php" style="color: white; text-decoration: none;">Ưu Đãi</a></li>
           <div class="actions">
     <div class="search">
         <input type="text" placeholder="Bạn đang tìm gì?">
         <button><img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="search"></button>
     </div>
 
-    <a class="profile-user" href="user.html"><img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="user"></a>
-    <a class="cart-bag" href="giohang.html">
+    <a class="profile-user" href="user.php"><img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="user"></a>
+    <a class="cart-bag" href="giohang.php">
       <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="bag">
       <span id="cartCount" class="cart-count">0</span>
     </a>
-    <a href="user-address.html"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="location"></a>
+    <a href="user-address.php"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="location"></a>
     <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="truck"></a>
 </div>
 
@@ -62,9 +62,9 @@
             </div>
         </div>
 
-        <a href="donhangcuauser.html" class="btn">📦 Xem đơn hàng</a>
-        <a href="giohang.html" class="btn">🛒 Giỏ hàng</a>
-        <a href="shop.html" class="">
+        <a href="donhangcuauser.php" class="btn">📦 Xem đơn hàng</a>
+        <a href="giohang.php" class="btn">🛒 Giỏ hàng</a>
+        <a href="shop.php" class="">
         <button class="btn logout" onclick="logout()">🚪 Đăng xuất</button>
         </a>
     </div>

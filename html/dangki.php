@@ -17,8 +17,8 @@
       </div>
       <nav class="main-menu">
         <ul>
-            <h1 class="company-name"><a href="shop.html" style="color: white; text-decoration: none;">Nguyensports</a></h1>
-          <li><a href="shop.html" style="color: white; text-decoration: none;">Hàng Mới</a></li>
+            <h1 class="company-name"><a href="shop.php" style="color: white; text-decoration: none;">Nguyensports</a></h1>
+          <li><a href="Hang-Moi.php" style="color: white; text-decoration: none;">Hàng Mới</a></li>
           <li class="has-submenu">
             Nam
             <div class="mega-menu">
@@ -460,7 +460,7 @@ Bộ Môn
 </div>
 </li>
 
-          <li class="has-submenu"><a href="giohang.html" style="color: white; text-decoration: none;">Ưu Đãi</a>
+          <li class="has-submenu"><a href="giohang.php" style="color: white; text-decoration: none;">Ưu Đãi</a>
             <div class="mega-menu">
               <div class="column">
                 <ul>
@@ -479,7 +479,7 @@ Bộ Môn
 
     <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="user"></a>
     <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="bag"></a>
-    <a href="user-address.html"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="location"></a>
+    <a href="user-address.php"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="location"></a>
     <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="truck"></a>
 </div>
 
@@ -493,8 +493,8 @@ Bộ Môn
         <label for="fullname">Họ và tên</label>
         <input type="text" id="fullname" name="fullname" required />
 
-        <label for="email">Địa chỉ Email</label>
-        <input type="email" id="email" name="email" required />
+        <label for="username">Tên đăng nhập</label>
+        <input type="text" id="username" name="username" required />
 
         <label for="password">Mật khẩu</label>
         <input type="password" id="password" name="password" required />
@@ -505,7 +505,7 @@ Bộ Môn
         <button type="submit">ĐĂNG KÝ</button>
 
         <div class="form-links">
-          <a href="login.html">Đã có tài khoản? Đăng nhập</a>
+          <a href="login.php">Đã có tài khoản? Đăng nhập</a>
         </div>
       </form>
     </div>
@@ -517,20 +517,20 @@ Bộ Môn
           <div class="footer-section">
             <h3>Hỗ Trợ Khách Hàng</h3>
             <ul>
-                             <li><a href="giohang.html">Hướng Dẫn Mua Hàng</a></li>
+                             <li><a href="giohang.php">Hướng Dẫn Mua Hàng</a></li>
               <li><a href="#">Phương Thức Thanh Toán</a></li>
               <li><a href="#">Chính Sách Đổi Trả</a></li>
               <li><a href="#">Chính Sách Giao Hàng</a></li>
               <li><a href="#">Chính Sách Bảo Mật</a></li>
               <li><a href="#">Câu Hỏi Thường Gặp</a></li>
-                             <li><a href="user-address.html">Liên Hệ</a></li>
+                             <li><a href="user-address.php">Liên Hệ</a></li>
             </ul>
           </div>
 
           <div class="footer-section">
             <h3>Về Chúng Tôi</h3>
             <ul>
-                             <li><a href="shop.html">Giới Thiệu</a></li>
+                             <li><a href="shop.php">Giới Thiệu</a></li>
               <li><a href="#">Hệ Thống Cửa Hàng</a></li>
               <li><a href="#">Tuyển Dụng</a></li>
             </ul>
