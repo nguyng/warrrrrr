@@ -463,3 +463,52 @@ a:visited {
 a:active {
   text-decoration: none;
 }
+
+.no-products {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.no-products h3 {
+    color: #6c757d;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Cải thiện hiển thị cho product-price */
+.product-price {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 1.1rem;
+    margin: 8px 0;
+}
+
+/* Cải thiện hiển thị cho product-category */
+.product-category {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+/* Animation cho nút add-to-cart */
+.add-to-cart {
+    transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Cải thiện hiển thị cho product-card */
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}

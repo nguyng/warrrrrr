@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/header-fotter.css">
     <link rel="stylesheet" href="../css/giohang.css">
     <script src="../js/Hang_Moi.js" defer></script>
+    <script src="add_cart_functions.js" defer></script>
 </head>
 <body>
   <div class="header">
@@ -46,130 +47,168 @@
     </nav>
   </div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Hero Section -->
-      <section class="hero-section">
-        <div class="hero-content">
-          <h1>HÀNG NAM 2025</h1>
-          <p>Phong cách thể thao nam tính, năng động và hiện đại</p>
-          <a href="#products" class="cta-button">Khám Phá Ngay</a>
-        </div>
-      </section>
+                <!-- Main Content -->
+                <main class="main-content">
+                  <!-- Hero Section -->
+                  <section class="hero-section">
+                    <div class="hero-content">
+                      <h1>HÀNG NAM 2025</h1>
+                      <p>Phong cách thể thao nam tính, năng động và hiện đại</p>
+                      <a href="#products" class="cta-button">Khám Phá Ngay</a>
+                    </div>
+                  </section>
 
-      <!-- Category Navigation -->
-      <section class="brand-nav">
-        <div class="container">
-          <h2>Danh Mục Sản Phẩm Nam</h2>
-          <div class="brand-tabs">
-            <button class="brand-tab active" data-category="all">Hot</button>
-            <button class="brand-tab" data-category="ao">Áo</button>
-            <button class="brand-tab" data-category="quan">Quần</button>
-            <button class="brand-tab" data-category="giay">Giày</button>
-            <button class="brand-tab" data-category="phukien">Phụ Kiện</button>
-          </div>
-        </div>
-      </section>
+                  <!-- Category Navigation -->
+                  <section class="brand-nav">
+                      <div class="container">
+                          <h2>Danh Mục Sản Phẩm Nam</h2>
+                          <div class="brand-tabs">
+                              <button class="brand-tab active" data-category="all">Hot</button>
+                              <button class="brand-tab" data-category="ao">Áo</button>
+                              <button class="brand-tab" data-category="quan">Quần</button>
+                              <button class="brand-tab" data-category="giay">Giày</button>
+                              <button class="brand-tab" data-category="phukien">Phụ Kiện</button>
+                          </div>
+                          <div id="product-list" style="margin-top:20px;"></div>
+                      </div>
+                  </section>
 
-      <!-- Products Section -->
-      <section id="products" class="products-section">
-        <div class="container">
-          <!-- Áo Section -->
-          <div class="brand-products" data-category="ao">
-            <h2 class="brand-title">Áo Nam</h2>
-            
-            <div class="products-grid">
-              <div class="product-card">
-                <div class="product-image">
-                  <img src="../img/z6904596426731_1967cf8d5596bc1fd628b55a8a78ff7e.jpg" alt="Áo Thun Nam">
-                  <div class="product-overlay">
-                    <button class="quick-view">Xem Nhanh</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <h4>Áo Thun Adidas Nam</h4>
-                  <p class="product-category">Áo Thun</p>
-                  <p class="product-price">599.000đ</p>
-                  <button class="add-to-cart">Thêm Vào Giỏ</button>
-                </div>
-              </div>
+                  <script>
+                  document.addEventListener("DOMContentLoaded", function() {
+                      // Tải mặc định sản phẩm Hot
+                      loadProducts("all");
 
-              <div class="product-card">
-                <div class="product-image">
-                  <img src="https://via.placeholder.com/300x300/000000/FFFFFF?text=Áo+Hoodie+Nam" alt="Áo Hoodie Nam">
-                  <div class="product-overlay">
-                    <button class="quick-view">Xem Nhanh</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <h4>Áo Hoodie Nike Nam</h4>
-                  <p class="product-category">Áo Hoodie</p>
-                  <p class="product-price">899.000đ</p>
-                  <button class="add-to-cart">Thêm Vào Giỏ</button>
-                </div>
-              </div>
+                      // Gán sự kiện click cho các nút
+                      document.querySelectorAll(".brand-tab").forEach(btn => {
+                          btn.addEventListener("click", function() {
+                              // Xóa active cũ
+                              document.querySelectorAll(".brand-tab").forEach(b => b.classList.remove("active"));
+                              this.classList.add("active");
 
-              <div class="product-card">
-                <div class="product-image">
-                  <img src="https://via.placeholder.com/300x300/FF6B35/FFFFFF?text=Áo+Polo+Nam" alt="Áo Polo Nam">
-                  <div class="product-overlay">
-                    <button class="quick-view">Xem Nhanh</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <h4>Áo Polo Skechers Nam</h4>
-                  <p class="product-category">Áo Polo</p>
-                  <p class="product-price">499.000đ</p>
-                  <button class="add-to-cart">Thêm Vào Giỏ</button>
-                </div>
-              </div>
+                              // Gọi AJAX
+                              let category = this.dataset.category;
+                              loadProducts(category);
+                          });
+                      });
 
-              <div class="product-card">
-                <div class="product-image">
-                  <img src="https://via.placeholder.com/300x300/00BFFF/FFFFFF?text=Áo+Bơi+Nam" alt="Áo Bơi Nam">
-                  <div class="product-overlay">
-                    <button class="quick-view">Xem Nhanh</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <h4>Áo Bơi Speedo Nam</h4>
-                  <p class="product-category">Áo Bơi</p>
-                  <p class="product-price">399.000đ</p>
-                  <button class="add-to-cart">Thêm Vào Giỏ</button>
-                </div>
-              </div>
+                      function loadProducts(category) {
+                          fetch("get_sanpham_nam.php?loai=" + category)
+                          .then(res => res.text())
+                          .then(data => {
+                              document.getElementById("product-list").innerHTML = data;
+                          })
+                          .catch(err => {
+                              document.getElementById("product-list").innerHTML = "Lỗi tải dữ liệu";
+                          });
+                      }
+                  });
 
-              <div class="product-card">
-                <div class="product-image">
-                  <img src="https://via.placeholder.com/300x300/8B4513/FFFFFF?text=Áo+Sơ+Mi+Nam" alt="Áo Sơ Mi Nam">
-                  <div class="product-overlay">
-                    <button class="quick-view">Xem Nhanh</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <h4>Áo Sơ Mi Thể Thao Nam</h4>
-                  <p class="product-category">Áo Sơ Mi</p>
-                  <p class="product-price">699.000đ</p>
-                  <button class="add-to-cart">Thêm Vào Giỏ</button>
-                </div>
-              </div>
+                  // Hàm xem nhanh sản phẩm
+                  function quickView(productId) {
+                      alert("Xem nhanh sản phẩm ID: " + productId);
+                      // Có thể mở modal hoặc chuyển đến trang chi tiết sản phẩm
+                  }
 
-              <div class="product-card">
-                <div class="product-image">
-                  <img src="https://via.placeholder.com/300x300/2F4F4F/FFFFFF?text=Áo+Khoác+Nam" alt="Áo Khoác Nam">
-                  <div class="product-overlay">
-                    <button class="quick-view">Xem Nhanh</button>
-                  </div>
-                </div>
-                <div class="product-info">
-                  <h4>Áo Khoác Thể Thao Nam</h4>
-                  <p class="product-category">Áo Khoác</p>
-                  <p class="product-price">1.299.000đ</p>
-                  <button class="add-to-cart">Thêm Vào Giỏ</button>
-                </div>
-              </div>
-            </div>
-          </div>
+                  // Hàm thêm vào giỏ hàng
+                  function addToCart(productId, productName, productPrice) {
+                      // Lấy giỏ hàng hiện tại từ localStorage
+                      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                      
+                      // Kiểm tra sản phẩm đã có trong giỏ hàng chưa
+                      let existingItem = cart.find(item => item.id === productId);
+                      
+                      if (existingItem) {
+                          existingItem.quantity += 1;
+                      } else {
+                          cart.push({
+                              id: productId,
+                              name: productName,
+                              price: productPrice,
+                              quantity: 1
+                          });
+                      }
+                      
+                      // Lưu lại vào localStorage
+                      localStorage.setItem('cart', JSON.stringify(cart));
+                      
+                      // Cập nhật số lượng hiển thị trên giỏ hàng
+                      updateCartCount();
+                      
+                      alert("Đã thêm " + productName + " vào giỏ hàng!");
+                  }
+
+                  // Hàm cập nhật số lượng sản phẩm trong giỏ hàng
+                  function updateCartCount() {
+                      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                      let totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                      document.getElementById('cartCount').textContent = totalItems;
+                  }
+
+                  // Cập nhật số lượng khi trang được tải
+                  document.addEventListener("DOMContentLoaded", function() {
+                      updateCartCount();
+                  });
+                  </script>
+
+                  <!-- Products Section -->
+                  <section id="products" class="products-section">
+                    <div class="container">
+                      <!-- Áo Section -->
+                      <div class="brand-products" data-category="ao">
+                        <h2 class="brand-title">Áo Nam</h2>
+                        <div class="products-grid">
+                                                     <?php
+                           require_once '../php/conn.php';
+
+                           $loai = $_GET['loai'] ?? 'all';
+                          $map = [
+                              'ao'      => 'AF', 
+                              'quan'    => 'QF', 
+                              'giay'    => 'GF', 
+                              'phukien' => 'PF'  
+                          ];
+
+                          if ($loai == 'all') {
+                              $sql = "SELECT * FROM sanpham WHERE idSP LIKE '%F%'"; 
+                              $stmt = $conn->prepare($sql);
+                          } else {
+                              $prefix = $map[$loai] ?? '';
+                              $sql = "SELECT * FROM sanpham WHERE idSP LIKE CONCAT(?, '%')";
+                              $stmt = $conn->prepare($sql);
+                              $stmt->bind_param("s", $prefix);
+                          }
+
+                          $stmt->execute();
+                          $result = $stmt->get_result();
+
+                          if ($result->num_rows > 0) {
+                              while ($row = $result->fetch_assoc()) {
+                                  ?>
+                                  <div class="product-card">
+                                    <div class="product-image">
+                                      <img src="https://via.placeholder.com/300x300/2F4F4F/FFFFFF?text=Áo+Khoác+Nam" alt="Áo Khoác Nam">
+                                      <div class="product-overlay">
+                                        <button class="quick-view">Xem Nhanh</button>
+                                      </div>
+                                    </div>
+                                    <div class="product-info">
+                                      <?php
+                                      echo "<h4>" . htmlspecialchars($row['tenSP']) . "</h4>";
+                                      echo "<p class='product-price'>Giá: " . number_format($row['giaSP']) . " VND</p>";
+                                      ?>
+                                      <button class="add-to-cart">Thêm Vào Giỏ</button>
+                                    </div>
+                                  </div>
+                                  <?php
+                              }
+                          } else {
+                              echo "<h1>Không có sản phẩm.</h1>";
+                          }
+
+                                                     $stmt->close();
+                           ?>
+                        </div>
+                      </div>
 
           <!-- Quần Section -->
           <div class="brand-products" data-category="quan">
@@ -187,7 +226,7 @@
                   <h4>Quần Short Adidas Nam</h4>
                   <p class="product-category">Quần Short</p>
                   <p class="product-price">399.000đ</p>
-                  <button class="add-to-cart">Thêm Vào Giỏ</button>
+                  <button class="add-to-cart" onclick="addToCart('QF001', 'Quần Short Adidas Nam', 399000)">Thêm Vào Giỏ</button>
                 </div>
               </div>
 
@@ -202,7 +241,7 @@
                   <h4>Quần Jogger Nike Nam</h4>
                   <p class="product-category">Quần Jogger</p>
                   <p class="product-price">699.000đ</p>
-                  <button class="add-to-cart">Thêm Vào Giỏ</button>
+                  <button class="add-to-cart" onclick="addToCart('QF002', 'Quần Jogger Nike Nam', 699000)">Thêm Vào Giỏ</button>
                 </div>
               </div>
 
@@ -513,6 +552,8 @@
             <p>Địa chỉ: Tầng 9, Tòa nhà Etown Central, Quận 4, TP.HCM</p>
           </div>
         </footer>
-      </div>
-</body>
-</html>
+             </div>
+       
+       <?php require_once '../php/close_conn.php'; ?>
+ </body>
+ </html>
