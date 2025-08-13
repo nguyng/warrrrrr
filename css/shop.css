@@ -74,25 +74,7 @@ body, html {
 }
 
 
-.main-menu ul li .mega-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  color: #000;
-  width: 1000px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-  flex-wrap: wrap;
-  gap: 20px;
-}
 
-.main-menu ul li.has-submenu:hover .mega-menu {
-  display: flex;
-}
 .actions {
     display: flex;
     align-items: center;
@@ -138,36 +120,7 @@ body, html {
     filter: brightness(0) invert(60%) sepia(100%) hue-rotate(80deg); /* chuyển xanh lá */
 }
     
-/* CỘT BÊN TRONG MEGA MENU */
-.mega-menu .column {
-  flex: 1;
-}
 
-.mega-menu h3 {
-  border-bottom: 2px solid #000;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.mega-menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.mega-menu li {
-  padding: 4px 0;
-}
-
-.mega-menu li.new {
-  color: green;
-  font-weight: bold;
-}
-
-.mega-menu li.sale {
-  color: red;
-  font-weight: bold;
-}
 /*category*/
 .category-section {
   text-align: center;
@@ -193,11 +146,16 @@ body, html {
   padding: 20px;
   border-radius: 6px;
   transition: transform 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
 }
 
 .category-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #d0d0d0;
 }
 
 .category-item img {
