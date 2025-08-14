@@ -73,82 +73,6 @@
                       </div>
                   </section>
 
-                  <script>
-                  document.addEventListener("DOMContentLoaded", function() {
-                      // Tải mặc định sản phẩm Hot
-                      loadProducts("all");
-
-                      // Gán sự kiện click cho các nút
-                      document.querySelectorAll(".brand-tab").forEach(btn => {
-                          btn.addEventListener("click", function() {
-                              // Xóa active cũ
-                              document.querySelectorAll(".brand-tab").forEach(b => b.classList.remove("active"));
-                              this.classList.add("active");
-
-                              // Gọi AJAX
-                              let category = this.dataset.category;
-                              loadProducts(category);
-                          });
-                      });
-
-                      function loadProducts(category) {
-                          fetch("get_sanpham_nam.php?loai=" + category)
-                          .then(res => res.text())
-                          .then(data => {
-                              document.getElementById("product-list").innerHTML = data;
-                          })
-                          .catch(err => {
-                              document.getElementById("product-list").innerHTML = "Lỗi tải dữ liệu";
-                          });
-                      }
-                  });
-
-                  // Hàm xem nhanh sản phẩm
-                  function quickView(productId) {
-                      alert("Xem nhanh sản phẩm ID: " + productId);
-                      // Có thể mở modal hoặc chuyển đến trang chi tiết sản phẩm
-                  }
-
-                  // Hàm thêm vào giỏ hàng
-                  function addToCart(productId, productName, productPrice) {
-                      // Lấy giỏ hàng hiện tại từ localStorage
-                      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                      
-                      // Kiểm tra sản phẩm đã có trong giỏ hàng chưa
-                      let existingItem = cart.find(item => item.id === productId);
-                      
-                      if (existingItem) {
-                          existingItem.quantity += 1;
-                      } else {
-                          cart.push({
-                              id: productId,
-                              name: productName,
-                              price: productPrice,
-                              quantity: 1
-                          });
-                      }
-                      
-                      // Lưu lại vào localStorage
-                      localStorage.setItem('cart', JSON.stringify(cart));
-                      
-                      // Cập nhật số lượng hiển thị trên giỏ hàng
-                      updateCartCount();
-                      
-                      alert("Đã thêm " + productName + " vào giỏ hàng!");
-                  }
-
-                  // Hàm cập nhật số lượng sản phẩm trong giỏ hàng
-                  function updateCartCount() {
-                      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                      let totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-                      document.getElementById('cartCount').textContent = totalItems;
-                  }
-
-                  // Cập nhật số lượng khi trang được tải
-                  document.addEventListener("DOMContentLoaded", function() {
-                      updateCartCount();
-                  });
-                  </script>
 
                   <!-- Products Section -->
                   <section id="products" class="products-section">
@@ -160,25 +84,8 @@
                                                      <?php
                            require_once '../php/conn.php';
 
-                           $loai = $_GET['loai'] ?? 'all';
-                          $map = [
-                              'ao'      => 'AF', 
-                              'quan'    => 'QF', 
-                              'giay'    => 'GF', 
-                              'phukien' => 'PF'  
-                          ];
-
-                          if ($loai == 'all') {
-                              $sql = "SELECT * FROM sanpham WHERE idSP LIKE '%F%'"; 
-                              $stmt = $conn->prepare($sql);
-                          } else {
-                              $prefix = $map[$loai] ?? '';
-                              $sql = "SELECT * FROM sanpham WHERE idSP LIKE CONCAT(?, '%')";
-                              $stmt = $conn->prepare($sql);
-                              $stmt->bind_param("s", $prefix);
-                          }
-
-                          $stmt->execute();
+                          $sql = "SELECT * FROM (SELECT * FROM sanpham sp JOIN colorsp cs ON sp.idSP = cs.idSP JOIN color c ON cs.idColor = c.idcolor;) WHERE idSP LIKE 'AF%'"; 
+                          $stmt = $conn->prepare($sql);
                           $result = $stmt->get_result();
 
                           if ($result->num_rows > 0) {
@@ -186,7 +93,7 @@
                                   ?>
                                   <div class="product-card">
                                     <div class="product-image">
-                                      <img src="https://via.placeholder.com/300x300/2F4F4F/FFFFFF?text=Áo+Khoác+Nam" alt="Áo Khoác Nam">
+                                      <img src="<?php echo $row['img']; ?>" alt="<?php echo $row['tenSP']; ?>">
                                       <div class="product-overlay">
                                         <button class="quick-view">Xem Nhanh</button>
                                       </div>
@@ -205,7 +112,7 @@
                               echo "<h1>Không có sản phẩm.</h1>";
                           }
 
-                                                     $stmt->close();
+                          $stmt->close();
                            ?>
                         </div>
                       </div>
